@@ -1,0 +1,70 @@
+USE MASTER
+GO
+
+        select * from city where city_name IN ('Berlin','New York') HAVING ID>1 GROUP BY COUNTRY_ID  ORDER BY ASC; -- Incorrect
+
+	select * from city where city_name IN ('Berlin','New York') GROUP BY <COUNTRY_ID> HAVING <ID>1>  ORDER BY ASC;  -- correct query
+
+	select distinct country_id from city;
+
+	select country_id,count(*) as cnt_id from city group by country_id having count(country_id) = 1;
+
+	select country_id,count(*) as cnt_id from city group by country_id having count(country_id) > 0  order by cnt_id asc ;
+
+	select country_id,count(*) as cnt_id from city group by country_id having count(country_id) > 0  order by country_id desc ;
+
+
+	select country_id from city where country_id=country_id;
+
+
+	select * from city;
+
+	select * from city where city_name not IN ('Berlin','New York')
+
+	select * from city where country_id between 2 and 4;
+
+	select * from city where country_id % 2 =1;
+	select * from city where country_id < 3;
+	select * from city where country_id <= 3;
+	select * from city where country_id <> 3;
+	select * from city where country_id != 3;
+
+
+	select * from city where long < 3;
+
+	select * from city where city_name like 'Berlin';
+
+	select * from city where city_name like 'Ber%';
+	select * from city where city_name like '%Be%';
+	select * from city where city_name like '%e%';
+	select * from city where city_name like '^Be%';
+	select * from city where city_name like '%n'
+
+	select * from city where city_name like 'Berli_';
+	select * from city where city_name like 'Berli_%';
+        
+
+	select count(id) from city;
+
+	select max(lat) as lat from city;
+	
+	select min(lat) as lat from city;
+
+	select sum(lat) as lat from city;
+
+	select avg(lat) as lat from city;
+
+
+	select * into city_dup from city;
+
+	select id,city_name into city3 from  
+	
+	INSERT INTO city_dup2 (id, city_name) select (id,city_name) from city;
+
+        
+
+
+
+
+
+
